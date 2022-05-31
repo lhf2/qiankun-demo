@@ -1,8 +1,23 @@
-import {createRouter, createWebHistory} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
-const Home = () => import('../src/components/Home.vue');
+const Home = () => import('../src/components/home.vue');
+const Content = () => import('../src/components/content.vue');
+const Empty = () => import('../src/components/Empty.vue')
+
 const routes = [
-  {path: '/', component: Home}
+  {
+    path: '/',
+    component: Home,
+    redirect: '/app',
+    children: [
+      { path: '/app', component: Content },
+      { path: '/vue/', component: Empty}
+    ]
+  },
+  {
+    path: '/*',
+    component: Home
+  },
 ];
 
 

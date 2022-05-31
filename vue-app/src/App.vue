@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <router-view></router-view>
-    </div>
+    <router-view/>
 </template>
 <script>
   export default {
@@ -18,7 +16,7 @@
   }
 </script>
 <style>
-    div {
-        color: cyan;
+    body{
+      margin: 0;
     }
 </style>

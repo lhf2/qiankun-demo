@@ -1,12 +1,11 @@
 <template>
-    <header-component></header-component>
     <div>
-        vue-app的home.vue
-        <el-button type="primary">elementUi 按钮</el-button>
+      子应用的内容
     </div>
 </template>
 <script>
   import {onMounted} from 'vue';
+  // 模块联邦
   import {HeaderComponent, utils} from 'rootApp/commonExport'
 
   export default {

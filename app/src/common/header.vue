@@ -1,3 +1,5 @@
 <template>
-    公用组件header
+    <div class="app-header">
+        主应用的header
+    </div>
 </template>
