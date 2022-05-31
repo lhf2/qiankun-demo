@@ -4,6 +4,7 @@ import './public-path';
 import {createRouter, createWebHistory} from 'vue-router';
 import routes from '../router/index'
 import ElementPlus from 'element-plus'
+import action from './action'
 
 let instance = null;
 let router = null;
@@ -38,6 +39,7 @@ export async function bootstrap() {
 export async function mount(props) {
   window.commonComponents = props.data.commonComponents;
   window.rootRouter = props.router;
+  action.setActions(props.actions)
   console.log('mounted', props.router);
   render(props);
 }

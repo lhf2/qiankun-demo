@@ -34,28 +34,36 @@
 
 import isQiankun from "../main";
 import { defineAsyncComponent } from "vue";
+import action from '../action'
 export default {
   name: "Home",
   components: {
-    HeaderComponent: !isQiankun ? defineAsyncComponent(() =>
-      import("../common/header.vue")
-    ) : '',
-    FooterComponent: !isQiankun ? defineAsyncComponent(() =>
-      import("../common/footer.vue")
-    ) : '',
-    Nav: !isQiankun ? defineAsyncComponent(() =>
-      import("../common/nav.vue")
-    ) : ''
+    HeaderComponent: !isQiankun
+      ? defineAsyncComponent(() => import("../common/header.vue"))
+      : "",
+    FooterComponent: !isQiankun
+      ? defineAsyncComponent(() => import("../common/footer.vue"))
+      : "",
+    Nav: !isQiankun
+      ? defineAsyncComponent(() => import("../common/nav.vue"))
+      : "",
+  },
+  mounted() {
+    // 接收state
+    action.onGlobalStateChange((state) => {
+      console.log("state", state);
+    }, true);
   },
   setup() {
     const goBack = () => {
-        if(isQiankun){
-           window.rootRouter.push('/')
-           //window.history.pushState('', '', '/')
-           return 
-        }
-        location.href = 'http://localhost:8080/app'
-        
+      // 修改state
+      action.setGlobalState({ a: 3 });
+      if (isQiankun) {
+        window.rootRouter.push("/");
+        //window.history.pushState('', '', '/')
+        return;
+      }
+      location.href = "http://localhost:8080/app";
     };
     return {
       isQiankun,

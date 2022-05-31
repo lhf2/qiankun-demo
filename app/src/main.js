@@ -1,6 +1,7 @@
 import {createApp} from 'vue';
 import App from './App.vue';
 import router from '../router/index'
+import actions from './utils/action';
 
 const app = createApp(App);
 app.use(router);
@@ -27,7 +28,8 @@ registerMicroApps([
       data: {
         commonComponents,
       },
-      router
+      router,
+      actions
     }
   }
 ]);
