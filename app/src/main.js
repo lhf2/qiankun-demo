@@ -25,8 +25,9 @@ registerMicroApps([
     activeRule: '/vue',
     props: {
       data: {
-        commonComponents
-      }
+        commonComponents,
+      },
+      router
     }
   }
 ]);

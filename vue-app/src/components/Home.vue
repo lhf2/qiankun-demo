@@ -5,6 +5,7 @@
       <Nav />
       <div class="content-box 3">
         我是子应用的内容
+        <el-button @click="goBack">返回主应用</el-button>
         <router-view />
       </div>
     </section>
@@ -47,8 +48,18 @@ export default {
     ) : ''
   },
   setup() {
+    const goBack = () => {
+        if(isQiankun){
+           window.rootRouter.push('/')
+           //window.history.pushState('', '', '/')
+           return 
+        }
+        location.href = 'http://localhost:8080/app'
+        
+    };
     return {
       isQiankun,
+      goBack,
     };
   },
 };

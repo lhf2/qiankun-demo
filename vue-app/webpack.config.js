@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {VueLoaderPlugin} = require('vue-loader/dist/index');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader/dist/index');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const packageName = require('./package.json').name;
 const { ModuleFederationPlugin } = require('webpack').container;
 

@@ -37,7 +37,8 @@ export async function bootstrap() {
 
 export async function mount(props) {
   window.commonComponents = props.data.commonComponents;
-  console.log('mounted');
+  window.rootRouter = props.router;
+  console.log('mounted', props.router);
   render(props);
 }
 
