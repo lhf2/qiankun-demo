@@ -17,15 +17,16 @@ function render(props = {}) {
     history,
     routes
   });
-  console.log('router', router);
   instance = createApp(App);
   instance.use(router);
   instance.use(ElementPlus);
   instance.mount(container ? container.querySelector('#app1') : '#app1');
 }
 
-
 // 独立运行时
+let isQiankun = window.__POWERED_BY_QIANKUN__
+export default isQiankun
+
 if (!window.__POWERED_BY_QIANKUN__) {
   render()
 }
@@ -36,7 +37,7 @@ export async function bootstrap() {
 
 export async function mount(props) {
   window.commonComponents = props.data.commonComponents;
-  console.log(props);
+  console.log('mounted');
   render(props);
 }
 

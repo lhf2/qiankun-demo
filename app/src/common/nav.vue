@@ -18,7 +18,9 @@ export default {
     onMounted(() => {
       if (!window.qiankunStarted) {
         window.qiankunStarted = true;
-        start();
+        start({
+            sandbox: { strictStyleIsolation: true }
+        });
       }
     });
   },
