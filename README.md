@@ -105,25 +105,25 @@
 5. 主子应用如何共享第三方组件库以及自己封装的组件？
     - 第三方组件库：externals
 
-    ```JavaScript
-    // 主、子应用都配置 externals，引入外链地址；子应用开启ignore；
-    // （但如果主应用开启了样式隔离，子应用开启ignore是有问题的，在主应用中加载的时候不能正确展示样式)
+        ```JavaScript
+        // 主、子应用都配置 externals，引入外链地址；子应用开启ignore；
+        // （但如果主应用开启了样式隔离，子应用开启ignore是有问题的，在主应用中加载的时候不能正确展示样式)
 
-    externals: {
-        'vue': 'Vue',
-        'element-plus': 'ElementPlus'
-    }
-    
-    // 主应用需要去掉ignore
-    <link ignore rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css">
-    <script ignore src="//unpkg.com/vue@next"></script>
-    <script ignore src="//unpkg.com/element-plus"></script>
-    
-    // 引入使用
-    import ElementPlus from 'element-plus'
-    instance.use(ElementPlus);
+        externals: {
+            'vue': 'Vue',
+            'element-plus': 'ElementPlus'
+        }
+        
+        // 主应用需要去掉ignore
+        <link ignore rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css">
+        <script ignore src="//unpkg.com/vue@next"></script>
+        <script ignore src="//unpkg.com/element-plus"></script>
+        
+        // 引入使用
+        import ElementPlus from 'element-plus'
+        instance.use(ElementPlus);
 
-    ```
+        ```
     - 自己封装的组件跟方法：props、webpack5 Module Federation;
 
         props：可以在父应用使用install注册一个插件（注册所有需要导出的组件），通过props传给子；
