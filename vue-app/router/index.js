@@ -1,5 +1,5 @@
 const Home = () => import('../src/components/Home.vue');
-const Content = () => import('../src/components/Content.vue');
+const Content = () => import('../src/components/content.vue');
 
 const routes = [
   {
