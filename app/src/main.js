@@ -24,7 +24,7 @@ registerMicroApps([
   {
     name: 'vue-app',
     // entry: 'http://localhost:8081/',
-    entry: '/subApp/vue-app',
+    entry: '/subApp/vue-app/',
     container: '#vue-app',
     activeRule: '/vue',
     props: {
