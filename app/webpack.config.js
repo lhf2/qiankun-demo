@@ -37,11 +37,11 @@ module.exports = {
     static: {
       directory: path.join(__dirname, './dist')
     },
-    port: 8080,
+    port: 8082,
     // 解决微应用刷新报错404
     proxy: {
       '/vue/': {
-        target: 'http://localhost:8080',
+        target: 'http://localhost:8082',
         changeOrigin: true,
         pathRewrite: {
           '^/vue': ''
