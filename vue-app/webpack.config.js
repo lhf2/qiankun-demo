@@ -14,7 +14,8 @@ module.exports = {
     library: `${packageName}`,
     libraryTarget: 'umd',
     // webpack5 jsonpFunction 改成了 chunkLoadingGlobal
-    chunkLoadingGlobal: `webpackJsonp_${packageName}`
+    chunkLoadingGlobal: `webpackJsonp_${packageName}`,
+    publicPath: '/subApp/vue-app/',
   },
   module: {
     rules: [
