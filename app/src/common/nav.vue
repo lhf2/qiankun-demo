@@ -4,7 +4,10 @@
       <router-link to="/app">主应用</router-link>
     </div>
     <div>
-      <router-link to="/vue">子应用</router-link>
+      <router-link to="/vue/">vue子应用</router-link>
+    </div>
+    <div>
+      <router-link to="/react/">react子应用</router-link>
     </div>
   </div>
 </template>
@@ -19,7 +22,7 @@ export default {
       if (!window.qiankunStarted) {
         window.qiankunStarted = true;
         start({
-            sandbox: { strictStyleIsolation: true }
+          sandbox: { strictStyleIsolation: true }
         });
       }
     });

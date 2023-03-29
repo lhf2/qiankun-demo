@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {VueLoaderPlugin} = require('vue-loader/dist/index');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader/dist/index');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
@@ -45,6 +45,13 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           '^/vue': ''
+        }
+      },
+      '/react/': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/react': ''
         }
       }
     },

@@ -24,8 +24,21 @@ registerMicroApps([
   {
     name: 'vue-app',
     entry: 'http://localhost:8081/',
-    container: '#vue-app',
+    container: '#child-app',
     activeRule: '/vue',
+    props: {
+      data: {
+        commonComponents,
+      },
+      router,
+      actions
+    }
+  },
+  {
+    name: 'react-app',
+    entry: 'http://localhost:3000/',
+    container: '#child-app',
+    activeRule: '/react',
     props: {
       data: {
         commonComponents,

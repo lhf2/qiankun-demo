@@ -11,7 +11,8 @@ const routes = [
     redirect: '/app',
     children: [
       { path: '/app', component: Content },
-      { path: '/vue/', component: Empty}
+      { path: '/vue/', component: Empty},
+      { path: '/react/', component: Empty}
     ]
   },
   {

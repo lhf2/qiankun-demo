@@ -5,7 +5,7 @@
       <Nav />
       <div class="content-box">
         <router-view />
-        <div id="vue-app"></div>
+        <div id="child-app"></div>
       </div>
     </section>
     <footer-component />
