@@ -6,13 +6,13 @@ module.exports = {
     config.output.libraryTarget = 'umd';
     config.output.jsonpFunction = `webpackJsonp_${name}`;
     config.output.globalObject = 'window';
+    config.output.publicPath = 'http://localhost:3000/';
 
     return config;
   },
 
   devServer: (_) => {
     const config = _;
-
     config.headers = {
       'Access-Control-Allow-Origin': '*',
     };

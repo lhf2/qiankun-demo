@@ -4,21 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './public-path';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />
+  },
+], {
+  basename: window.__POWERED_BY_QIANKUN__ ? '/react' : '/'
+});
+
 let root;
 function render(props) {
   const { container } = props;
   root = ReactDOM.createRoot(container ? container.querySelector('#root') : document.querySelector('#root'));
   root.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <RouterProvider router={router} />
+
   );
 }
 

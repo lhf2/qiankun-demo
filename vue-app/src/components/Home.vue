@@ -60,7 +60,7 @@ export default {
       action.setGlobalState({ a: 3 });
       if (isQiankun) {
         window.rootRouter.push("/");
-        //window.history.pushState('', '', '/')
+        // window.history.pushState('', '', '/')
         return;
       }
       location.href = "http://localhost:8080/app";
